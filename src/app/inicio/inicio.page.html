@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login">Back</ion-back-button>
+    </ion-buttons>
+    <ion-title>BIENVENIDO</ion-title>
+  </ion-toolbar>
+
+  <br />
+  <ion-avatar>
+    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+  </ion-avatar>
+  <br />
+  <p>
+    <ion-text color="warning" class="ion-text-center">¡ Bienvenido {{userData.nombre}} !</ion-text>
+  </p>
+</ion-header>
+
+<ion-content *ngIf="userData.rol == 'profesor'">
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="crearClase()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="scanCode()">
+    <ion-icon name="qr-code"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
